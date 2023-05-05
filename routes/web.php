@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('Counter', Counter::class);
-Route::get('Calculator', Calculator::class);
+Route::get('counter', Counter::class);
+Route::get('calculator', Calculator::class);
