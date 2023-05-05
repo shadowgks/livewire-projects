@@ -1,4 +1,4 @@
-<div>
+<div class="flex flex-col w-[300px] m-auto">
     <div class="flex justify-center gap-7 items-center pt-16">
         <input type="text" wire:model="todo_lists" wire:keydown.enter='addTodoList'>
         <button wire:click="addTodoList" class="bg-blue-600 text-white py-2 px-3 rounded-sm disabled:cursor-not-allowed disabled:bg-opacity-90">Add</button>
