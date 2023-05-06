@@ -17,17 +17,19 @@ class TodoList extends Component
 
     public function todoLists()
     {
-        $this->todos = Todolists::orderBy('created_at', 'Desc')->get();
+        $this->todos = Todolists::orderBy('created_at', 'DESC')->get();
     }
 
     public function addTodoList()
     {
-        $create = Todolists::create([
-            'title' => $this->todo_lists,
-            'complated' => false,
-        ]);
-        $this->todo_lists = '';
-        $this->todoLists();
+        if ($this->todo_lists) {
+            $create = Todolists::create([
+                'title' => $this->todo_lists,
+                'complated' => false,
+            ]);
+            $this->todo_lists = '';
+            $this->todoLists();
+        }
     }
 
     public function toggleTodoList($id)

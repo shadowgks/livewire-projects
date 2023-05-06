@@ -23,7 +23,7 @@ class Calculator extends Component
             $this->result = $num1 + $num2;
         } else if ($this->actions == '-') {
             $this->result = $num1 - $num2;
-        } else if ($this->actions ==='*') {
+        } else if ($this->actions === '*') {
             $this->result = $num1 * $num2;
         } else if ($this->actions == '/') {
             $this->result = $num1 / $num2;
