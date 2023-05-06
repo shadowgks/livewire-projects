@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Continent;
+use App\Models\Country;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +23,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $continents = [
+            ['name'=>'Europe'],
+            ['name'=>'Africa'],
+            ['name'=>'Asia'],
+            ['name'=>'South America'],
+            ['name'=>'North America']
+        ];
+
+        foreach ($continents as $key => $item) {
+            Continent::factory()->create($item)
+            ->each(function ($e){
+                $e->countries()->saveMany(Country::factory(10)->make());
+            });
+        }
     }
 }
