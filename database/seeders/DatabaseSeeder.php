@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Continent;
 use App\Models\Country;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,6 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
+        //B Continents & Countries
         $continents = [
             ['name'=>'Europe'],
             ['name'=>'Africa'],
@@ -30,6 +33,9 @@ class DatabaseSeeder extends Seeder
             ->each(function ($e){
                 $e->countries()->saveMany(Country::factory(10)->make());
             });
-        }
+        }//E
+
+        //B Products
+        Product::factory(100)->create();
     }
 }
