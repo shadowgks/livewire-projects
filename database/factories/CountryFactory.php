@@ -18,7 +18,7 @@ class CountryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->country(),
+            'name' => fake()->country,
             'continent_id' => fake()->numberBetween(1, Continent::count()),
         ];
     }

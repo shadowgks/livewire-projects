@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Continent;
 use App\Models\Todolists;
 use Livewire\Component;
 

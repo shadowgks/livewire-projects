@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+
+    function continents(){
+        return $this->belongsTo(Continent::class);
+    }
 }
