@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Continent;
 use App\Models\Country;
 use Livewire\Component;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CascadingDropdown extends Component
 {
@@ -19,9 +20,14 @@ class CascadingDropdown extends Component
 
     public function selectedContinent()
     {
-        if($this->getValueContinent !== -1){
-            $this->countries = Country::where('continent_id', $this->getValueContinent)->get();
+        try {
+            if($this->getValueContinent !== -1){
+                $this->countries = Country::where('continent_id', $this->getValueContinent)->get();
+            }
+        } catch (\Throwable $th) {
+            return;
         }
+
     }
 
     public function render()
