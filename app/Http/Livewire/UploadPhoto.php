@@ -10,16 +10,17 @@ class UploadPhoto extends Component
 {
     use WithFileUploads;
 
-    public $photo;
+    public $pictures = [];
 
     public function save()
     {
-
         $this->validate([
-            'photo' => 'required|mimes:jpeg,png,jpg,gif', // 1MB Max
+            'pictures.*' => 'required|mimes:jpeg,png,jpg,gif',
         ]);
 
-        $this->photo->store('photos');
+        foreach ($this->pictures as $key => $item) {
+            $item->store('photos');
+        }
     }
 
     public function render()
