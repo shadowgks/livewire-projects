@@ -5,6 +5,7 @@ use App\Http\Livewire\CascadingDropdown;
 use App\Http\Livewire\Counter;
 use App\Http\Livewire\ProductsSearch;
 use App\Http\Livewire\TodoList;
+use App\Http\Livewire\UploadPhoto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,4 @@ Route::get('calculator', Calculator::class);
 Route::get('todo-list', TodoList::class);
 Route::get('cascading-dropdown', CascadingDropdown::class);
 Route::get('products-search', ProductsSearch::class);
+Route::get('upload-pictures', UploadPhoto::class);
